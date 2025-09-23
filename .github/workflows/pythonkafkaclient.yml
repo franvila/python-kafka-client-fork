@@ -9,8 +9,6 @@
 name: Python Kafka Client Container 
 on:
   workflow_dispatch:
-env:
-  REGISTRY_DESTINATION: "quay.io/kroxylicious/pythonkafkaclient"
 jobs:
   build:
     runs-on: ubuntu-latest
