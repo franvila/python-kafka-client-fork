@@ -19,7 +19,7 @@ The different parameters that can be used are:
 ```
 
 ```bash
-kubectl run -i -n <namespace> --image=quay.io/fvila/pythonkafkaclient:2.11.1 -- python3 /usr/src/confluent-kafka-python/Producer.py -b <bootstrap-servers> -t <topic_name>
+kubectl run -i -n <namespace> --image=quay.io/fvila/pythonkafkaclient:0.1.0-2.11.1 -- python3 /usr/src/confluent-kafka-python/Producer.py -b <bootstrap-servers> -t <topic_name>
 ```
 
 ### Consumer
@@ -32,5 +32,5 @@ The different parameters that can be used are:
 -g          optional parameters to set the group name
 ```
 ```bash
-kubectl run -i -n <namespace> --image=quay.io/fvila/pythonkafkaclient:2.11.1 -- python3 /usr/src/confluent-kafka-python/Consumer.py -n <num_of_expected_messages> -b <bootstrap-servers> -t <topic_name>
+kubectl run -i -n <namespace> --image=quay.io/fvila/pythonkafkaclient:0.1.0-2.11.1 -- python3 /usr/src/confluent-kafka-python/Consumer.py -n <num_of_expected_messages> -b <bootstrap-servers> -t <topic_name>
 ```
