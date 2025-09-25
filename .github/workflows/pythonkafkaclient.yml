@@ -8,8 +8,6 @@
 
 name: Python Kafka Client Container
 on:
-  schedule:
-    - cron: '0 0 * * 5'
   push:
     tags: [ '*.*.*' ]
   workflow_dispatch:
