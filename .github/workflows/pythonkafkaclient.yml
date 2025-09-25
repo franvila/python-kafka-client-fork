@@ -8,6 +8,8 @@
 
 name: Python Kafka Client Container
 on:
+  schedule:
+    - cron: '0 0 * * 5'
   push:
     tags: [ '*.*.*' ]
   workflow_dispatch:
@@ -43,9 +45,10 @@ jobs:
         run: |
           REPO_RELEASE=${{ steps.pythonKafkaClientRelease.outputs.release }}
           echo "RELEASE_VERSION=${REPO_RELEASE}" >> $GITHUB_ENV
-      - name: 'Check out repository'
+      - name: 'Check out repository from latest tag'
         uses: actions/checkout@v5
         with:
+          ref: ${{ env.RELEASE_VERSION }}
           fetch-depth: 0
       - name: 'Set up QEMU'
         uses: docker/setup-qemu-action@v3
