@@ -1,4 +1,6 @@
-# Python Kafka Client
+# Python Kafka Test Client
+
+The intent of this client is to help Kroxylicious system tests, so all configurations are made to fulfill our requirements.
 
 ## Usage
 
@@ -9,13 +11,16 @@ After successfully building images (which will cause the images to be pushed to 
 You can deploy clients by using kubernetes `Jobs` with the example image.
 
 Example command for deploying job:
+
 ### Producer
 
 The different parameters that can be used are:
 ```
 -b          list of boostrap servers separated by coma
 -t          topic name
--k          optional parameters to set the message key
+-k          optional parameter to set the message key
+-H          optional parameter to set a header in format 'header1=header value'. 
+            If more than one header is added, -H has to be included multiple times: "-H 'header1=header1 value' -H 'header2=header2 value'..."
 ```
 
 ```bash
