@@ -30,8 +30,6 @@ def main(args):
         else:
             print('Record {} successfully produced to {} [{}] at offset {}'.format(
                 msg.key(), msg.topic(), msg.partition(), msg.offset()))
-            # sys.stdout.write('%% Record delivered to %s [%d] @ %d\n' %
-            #                  (msg.topic(), msg.partition(), msg.offset()))
 
     # Read lines from stdin, produce each line to Kafka
     for line in sys.stdin:
