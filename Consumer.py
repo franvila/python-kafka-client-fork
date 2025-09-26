@@ -74,7 +74,7 @@ if __name__ == '__main__':
                         help="Number of messages expected")
     parser.add_argument('-t', dest="topic", required=True,
                         help="Topic name")
-    parser.add_argument('-g', dest="group", default="example_group",
+    parser.add_argument('-g', dest="group",
                         help="Consumer group")
 
     main(parser.parse_args())
