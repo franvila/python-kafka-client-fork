@@ -9,6 +9,7 @@ import argparse
 import sys
 import logging
 
+
 def print_record(msg):
     key = "" if msg.key() is None else str(msg.key().decode("utf-8"))
     headers = "["
@@ -81,7 +82,7 @@ if __name__ == '__main__':
                         help="Number of records expected")
     parser.add_argument('-t', dest="topic", required=True,
                         help="Topic name")
-    parser.add_argument('-g', dest="group",
+    parser.add_argument('-g', dest="group", default="test_group",
                         help="Consumer group")
 
     main(parser.parse_args())
