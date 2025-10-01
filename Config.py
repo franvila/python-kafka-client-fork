@@ -6,7 +6,7 @@
 
 def sasl_conf(args):
     sasl_mechanism = args.sasl_mechanism
-    security_protocol = 'SASL_PLAINTEXT' if not args.enable_tls else 'SASL_SSL'
+    security_protocol = args.security_protocol
 
     sasl_config = {'sasl.mechanism': sasl_mechanism,
                    'security.protocol': security_protocol}
