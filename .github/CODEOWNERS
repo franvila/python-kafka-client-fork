@@ -2,5 +2,4 @@
 # When adding (or removing) code owners to the project, remember to update the `developers` within the pom.xml.
 
 /.github/ @kroxylicious/admins
-/kroxylicious-docs/docs/ @kroxylicious/developers @kroxylicious/documentationwriters
 * @kroxylicious/developers
