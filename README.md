@@ -26,6 +26,7 @@ The different parameters that can be used are:
                                 * security_protocol=<value> --> Security protocol to use. Choices=['PLAINTEXT', 'SASL_PLAINTEXT', 'SSL', 'SASL_SSL']
                                 * username=<value>          --> Username
                                 * user_secret=<value>       --> Password for PLAIN and SCRAM, or path to keytab (ignored on Windows) if GSSAPI.
+                                * broker_principal=<value>  --> Kerberos principal name that Kafka runs as
 ```
 
 ```bash
@@ -45,6 +46,7 @@ The different parameters that can be used are:
                                 * security_protocol=<value> --> Security protocol to use. Choices=['PLAINTEXT', 'SASL_PLAINTEXT', 'SSL', 'SASL_SSL']
                                 * username=<value>          --> Username
                                 * user_secret=<value>       --> Password for PLAIN and SCRAM, or path to keytab (ignored on Windows) if GSSAPI.
+                                * broker_principal=<value>  --> Kerberos principal name that Kafka runs as
 ```
 ```bash
 kubectl run -i -n <namespace> --image=quay.io/fvila/pythonkafkaclient:0.1.0-2.11.1 -- python3 /usr/src/confluent-kafka-python/Consumer.py -n <num_of_expected_messages> -b <bootstrap-servers> -t <topic_name>
