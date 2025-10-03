@@ -48,7 +48,6 @@ def main(args):
 
     vargs = vars(args)
     extra_configuration = [x[0].split('=') for x in vargs.get('extra_conf', [])]
-    print(dict(extra_configuration))
     consumer_conf.update(dict(extra_configuration))
 
     # Create logger for consumer (logs will be emitted when poll() is called)
