@@ -98,7 +98,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Consumer")
     parser.add_argument('-b', dest="bootstrap_servers", required=True,
                         help="Bootstrap broker(s) (host[:port])")
-    parser.add_argument('-n', dest="num_of_records",
+    parser.add_argument('-n', dest="num_of_records", default=0,
                         help="Number of records expected")
     parser.add_argument('-t', dest="topic", required=True,
                         help="Topic name")
