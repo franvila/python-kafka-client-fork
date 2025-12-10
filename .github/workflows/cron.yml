@@ -22,21 +22,16 @@
 # - REGISTRY_TOKEN - the access token that corresponds to `REGISTRY_USERNAME`
 #
 
-name: Python Kafka Client Container
+name: Cron Scheduled Python Kafka Client Container
 on:
-  push:
-    tags: [ '*.*.*' ]
+  schedule:
+    - cron: '0 0 * * 5'
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     if: ${{ vars.REGISTRY_SERVER != '' && vars.REGISTRY_USERNAME != '' }}
     steps:
-      - name: Check package version
-        run: |
-          TAG=$(curl -H "Authorization: Bearer XYZ" -X GET "https://${{vars.REGISTRY_SERVER}}/api/v1/repository/kroxylicious/python-kafka-test-client/tag/" | jq .tags[].name | head -1 | sed -e 's|\"||g')
-          arrTag=(${TAG//-/ })
-          echo ${arrTag[1]}
       - name: 'Get latest release version of confluent kafka python package'
         id: confluentKafkaPython
         uses: pozetroninc/github-action-get-latest-release@v0.8.0
